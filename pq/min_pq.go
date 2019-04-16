@@ -101,15 +101,3 @@ func (m *MinPQ) resize(capacity int) {
 	}
 	m.pq = keys
 }
-
-func (m *MinPQ) String() string {
-	str := ""
-	for i := 1; i <= m.n; i++ {
-		if m.pq[i] == nil {
-			str += "-"
-		} else {
-			str += m.pq[i].Value().(string)
-		}
-	}
-	return str
-}
