@@ -1,7 +1,8 @@
 package pq
 
 var (
-	keys = []string{"P", "Q", "E", "-", "X", "A", "M", "-", "P", "L", "E", "-"}
+	keys          = []string{"P", "Q", "E", "-", "X", "A", "M", "-", "P", "L", "E", "-"}
+	indexedPQKeys = []string{"P", "Q", "E", "X", "A", "M", "L"}
 )
 
 type MockKey struct {
@@ -19,5 +20,9 @@ func (m *MockKey) CompareTo(k Key) int {
 }
 
 func (m *MockKey) Value() interface{} {
+	if m == nil {
+		return ""
+	}
+
 	return m.value
 }
